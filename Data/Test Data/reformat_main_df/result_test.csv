@@ -1,0 +1,17 @@
+Date,Description,Original Description,Amount,Category,Account Name
+2023-01-19,DISCOVER,DISCOVER,-70.01,Credit Card Payment,CHECKING Account
+2023-01-19,Payment Thank You-Mobile,Payment Thank You-Mobile,4.99,Credit Card Payment,CREDIT CARD
+2023-01-19,Payment Thank You-Mobile,Payment Thank You-Mobile,180.54,Credit Card Payment,CREDIT CARD
+2023-01-19,McDonald's Lunch,DOORDASH*MCDONALDS,-16.19,Food Delivery,DISCOVER IT CARD
+2023-01-18,INTERNET PAYMENT - THANK YOU,INTERNET PAYMENT - THANK YOU,70.01,Credit Card Payment,DISCOVER IT CARD
+2023-01-18,Deposit from 360 Performance Savings XXXXXXX9796,Deposit from 360 Performance Savings XXXXXXX9796,300.0,Transfer,CHECKING Account
+2023-01-18,Withdrawal to 360 Checking XXXXXXX9741,Withdrawal to 360 Checking XXXXXXX9741,-300.0,Transfer,SAVINGS Account
+2022-08-25,AplPay CANTALOUPE 2 MALVERN             PA,AplPay CANTALOUPE 2 MALVERN             PA,-1.85,Food & Dining,Platinum Card
+2021-10-22,Apple,PAYPAL           INST XFER  211022 APPLE.COM BILL  NGUYEN TRAN                                     ,-5.33,Electronics & Software,Checking
+2021-10-22,Apple,PAYPAL           INST XFER  211022 APPLE.COM BILL  NGUYEN TRAN                                     ,-2.99,Electronics & Software,Checking
+2021-10-19, INST XFER 211019 SUPERSUMMAR NGUYEN TRAN,PAYPAL           INST XFER  211019 SUPERSUMMAR     NGUYEN TRAN                                     ,-9.95,Transfer,Checking
+2021-10-19,Sterling Drug,PURCHASE                                AUTHORIZED ON   10/19 STERLING DRUG #34         NORTHFIELD    MN  P00381292826147046 CARD 8515,-6.88,Pharmacy,Checking
+2021-10-19,GrubHub,PURCHASE                                AUTHORIZED ON   10/17 GRUBHUBSUBWAY             GRUBHUB.COM   NY  S301290462267481   CARD 8515,-18.51,Food & Dining,Checking
+2021-10-15,eTransfer in Branch/Store - From savings 700 WATER ST S NORTHFIELD MN 8699,eTransfer in Branch/Store - From savings 700 WATER ST S NORTHFIELD MN 8699,225.57,Transfer,Carleton Savings
+2021-10-15,eTransfer in Branch/Store - To savings 700 WATER ST S NORTHFIELD MN 5697,eTransfer in Branch/Store - To savings 700 WATER ST S NORTHFIELD MN 5697,-225.57,Transfer,Savings
+2021-10-15,CARLETON PAYROLL PAYROLL,"CARLETON PAYROLL PAYROLL    211013 2028540         TRAN, NGUYEN N.                                 ",225.57,Paycheck,Savings
