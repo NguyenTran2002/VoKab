@@ -28,6 +28,11 @@ def homepage():
 
     #--------------------------
 
+    """
+    Note:
+        - Information on drop down menu: https://stackoverflow.com/questions/66627718/how-to-grab-the-value-from-the-drop-down-menu-using-flask
+    """
+
     return flask.render_template("home.html", study_sets = study_sets)
 
 @app.route("/writing_practice", methods = ['GET', 'POST'])

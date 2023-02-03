@@ -146,85 +146,35 @@ def reformat_set_df(df):
         1. in_main_df (Pandas dataframe): the reformatted dataframe
     """
 
-    # process the entire mint dataframe
+    # check if the dataframe is already reformatted
+    # get the number of columns of the dataframe
+    num_cols = len(df.columns)
 
-    # make a copy and only operate on the copy
-    in_main_df = df.copy()
+    # if the number of columns is 3, then it is already reformatted
+    if num_cols == 3:
+        return df
 
-    # drop the column named "Labels"
-    in_main_df.drop(columns = ["Labels"], inplace = True)
+    else:
+        # make a copy and only operate on the copy
+        in_main_df = df.copy()
 
-    # drop the column named "Notes"
-    in_main_df.drop(columns = ["Notes"], inplace = True)
+        # rename column 0 to "Word"
+        in_main_df.rename(columns = {0: "Word"}, inplace = True)
 
-    # # add a column named Unique ID at the first index
-    # in_main_df.insert(0, 'Unique ID', np.nan)
+        # rename column 1 to "Definition"
+        in_main_df.rename(columns = {1: "Definition"}, inplace = True)
 
-    # # add a column named Asset next to the Amount column
-    # in_main_df.insert(5, 'Asset', np.nan)
+        # add column "Mastery" with all values as 0
+        in_main_df["Mastery"] = 0
 
-    # change all transaction with debit type into negative value and vice versa
-    # loop through each row
-    for i in range (len(in_main_df)):
+        # add column "Total Tries"
+        in_main_df["Total Tries"] = 0
 
-        transaction = in_main_df.at[i, "Amount"]
-        description = str(in_main_df.at[i, "Description"])
-        category = in_main_df.at[i, "Category"]
+        # add column "Total Success"
+        in_main_df["Total Success"] = 0
 
-        # -----------------
-
-        time = in_main_df.at[i, "Date"]
-
-        # -----------------
-
-        # if "BOUGHT" is contained in the Description, change the Category to Buy
-        if ("BOUGHT" in description) and (category == "Investments"):
-            in_main_df.at[i, "Category"] = "Buy"
-        elif ("SOLD" in description) and (category == "Investments"):
-            in_main_df.at[i, "Category"] = "Sell"
-
-        # -----------------
-
-        # if the account name is "Additional Platinum Card - Supplementary account", change to "Platinum Card"
-        if in_main_df.at[i, "Account Name"] == "Additional Platinum Card - Supplementary account":
-            in_main_df.at[i, "Account Name"] = "Platinum Card"
-
-        # -----------------
-
-        type = in_main_df.at[i, "Transaction Type"]
-
-        if type == "debit":
-            in_main_df.at[i, "Amount"] = -transaction
-        else:
-            pass
-
-        # -----------------
-
-        if in_main_df.at[i, "Category"] == "Buy":
-            in_main_df.at[i, "Asset"] = abs(transaction)
-            in_main_df.at[i, "Amount"] = - abs(transaction) # make sure to deduct money when buying
-        elif in_main_df.at[i, "Category"] == "Sell":
-            in_main_df.at[i, "Asset"] = -abs(transaction)
-            in_main_df.at[i, "Amount"] = abs(transaction) # make sure to add money when selling
-
-        # if the time not yet includes the time, but only the date
-        if len(time) < 12:
-            # add the time to the date
-            in_main_df.at[i, "Date"] = time + " 00:00"
-
-        # -----------------
-        # change all accounts named Prime Store Card to Amazon Store Card (mint's data collection fault)
-        if in_main_df.at[i, "Account Name"] == "Prime Store Card":
-            in_main_df.at[i, "Account Name"] = "Amazon Store Card"
-
-    # remove the "Transaction Type" column
-    in_main_df.drop(columns=['Transaction Type'], inplace=True)
-
-    # change column date to datetime
-    in_main_df["Date"] = in_main_df["Date"].apply(datetime_convert)
-
-    # return the main dataframe
-    return in_main_df
+        # return the formatted dataframe
+        return in_main_df
 
 #------------------------------
 
