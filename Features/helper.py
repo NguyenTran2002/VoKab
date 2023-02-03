@@ -80,6 +80,28 @@ def df_iterate(df, column):
 
 #------------------------------
 
+def get_study_sets(user):
+    """
+    DESCRIPTION
+        - Given a user, returns all study sets under that user
+    """
+
+    all_users_path = "Data/Users"
+    user_path = all_users_path + "/" + user
+
+    # get all files stored in the user's folder
+    files = os.listdir(user_path)
+
+    # filter out all files that are not study sets
+    study_sets = [file for file in files if file.endswith(".csv")]
+
+    # remove the .csv extension
+    study_sets = [file[:-4] for file in study_sets]
+    
+    return study_sets
+
+#------------------------------
+
 def check_person(tag):
     """
     DESCRIPTION:
@@ -112,10 +134,10 @@ def check_person(tag):
 
 #------------------------------
 
-def reformat_main_df(df):
+def reformat_set_df(df):
     """
     DESCRIPTION:
-        1. Reformat the input dataframe into a standardized format
+        - Reformat the study set dataframe if it is not already reformatted
 
     INPUT SIGNATURE:
         1. df (Pandas dataframe): the input dataframe
