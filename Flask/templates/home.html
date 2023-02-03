@@ -36,8 +36,8 @@
 
         <br>
 
-        <form method = "POST" action = "/writing_practice">
-            <select name = "study_sets">
+        <form method = "POST" action = "/writing_practice_start">
+            <select name = "set"> <!--this is the name of the variable to be passed onto other places-->
           <option value = "{{study_sets[0]}}" selected>{{study_sets[0]}}</option>
           {% for set in study_sets[1:] %}
             <option value = "{{set}}">{{set}}</option>
@@ -47,10 +47,6 @@
           </form>
 
         <br>
-
-        <form style = "display: inline" action = "/writing_practice" method = "get">
-            <button>Start Learning</button>
-        </form>
 
 
     </body>

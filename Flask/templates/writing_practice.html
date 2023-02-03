@@ -21,11 +21,20 @@
         <form style = "display: inline" action = "/" method = "get">
             <button>VoKab Home</button>
         </form>
-        
+
         <br>
 
-        <form style = "display: inline" action = "/writing_result" method = "get">
-            <button>Check</button>
+        <h1>Definition</h1>
+
+        <p>{{definition}}</p>
+
+        <form id = "search_bar" action = "/writing_result" method = "get">
+
+            <label for = "user_answer">Enter the Corresponding Word:</label>
+            <input type = "text" id = "user_answer" name = "user_answer" value = "">
+            
+            <input type = "submit" value = "Check">
+
         </form>
 
 

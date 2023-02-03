@@ -48,7 +48,12 @@ class data_store():
         Re-implement this to have a dictionary-like operation?
     """
 
-    current_account_object = None
+    user = None
+    chosen_set_name = None
+    study_indieces = None
+    
+    # current entry
+    current_index = None
 
 #------------------------------
 
@@ -134,47 +139,43 @@ def check_person(tag):
 
 #------------------------------
 
-def reformat_set_df(df):
+def reformat_set_df(in_df):
     """
     DESCRIPTION:
-        - Reformat the study set dataframe if it is not already reformatted
+        - Reformat the study set dataframe
 
     INPUT SIGNATURE:
-        1. df (Pandas dataframe): the input dataframe
+        1. in_df (Pandas dataframe): the input dataframe
     
     OUTPUT SIGNATURE:
-        1. in_main_df (Pandas dataframe): the reformatted dataframe
+        1. set_df (Pandas dataframe): the reformatted dataframe
+        2. False (boolean): if the dataframe is already reformatted
     """
 
-    # check if the dataframe is already reformatted
-    # get the number of columns of the dataframe
-    num_cols = len(df.columns)
+    # make a copy of the in-df
+    set_df = in_df.copy()
 
-    # if the number of columns is 3, then it is already reformatted
-    if num_cols == 3:
-        return df
+    # rename column 0 to "Word"
+    set_df.rename(columns = {0: "Word"}, inplace = True)
 
-    else:
-        # make a copy and only operate on the copy
-        in_main_df = df.copy()
+    # rename column 1 to "Definition"
+    set_df.rename(columns = {1: "Definition"}, inplace = True)
 
-        # rename column 0 to "Word"
-        in_main_df.rename(columns = {0: "Word"}, inplace = True)
+    # # rename column 0 and 1
+    # mapping = {set_df.columns[0]:'Word', set_df.columns[1]: 'Definition'}
+    # set_df = set_df.rename(columns=mapping, inplace = True)
 
-        # rename column 1 to "Definition"
-        in_main_df.rename(columns = {1: "Definition"}, inplace = True)
+    # add column "Mastery" with all values as 0
+    set_df["Mastery"] = 0
 
-        # add column "Mastery" with all values as 0
-        in_main_df["Mastery"] = 0
+    # add column "Total Tries"
+    set_df["Total Tries"] = 0
 
-        # add column "Total Tries"
-        in_main_df["Total Tries"] = 0
+    # add column "Total Success"
+    set_df["Total Success"] = 0
 
-        # add column "Total Success"
-        in_main_df["Total Success"] = 0
-
-        # return the formatted dataframe
-        return in_main_df
+    # return the formatted dataframe
+    return set_df
 
 #------------------------------
 
