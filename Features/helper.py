@@ -50,7 +50,10 @@ class data_store():
 
     user = None
     chosen_set_name = None
-    study_indieces = None
+    set_df = None
+    set_path = None
+
+    to_export_df = None
     
     # current entry
     current_index = None
@@ -136,6 +139,34 @@ def check_person(tag):
 
     else:
         return False
+
+#------------------------------
+
+def update_data_after_answer(result, df, current_index):
+
+    """
+    DESCRIPTION:
+        Update the data to keep track of the user's progress on the study set
+    """
+
+    # update Total Tries
+    df.at[current_index, "Total Tries"] += 1
+
+    if result == True:
+
+        # update Total Success
+        df.at[current_index, "Total Success"] += 1
+
+        # update Mastery
+        if df.at[current_index, "Mastery"] < 3:
+            df.at[current_index, "Mastery"] += 1
+
+    else:
+        # update Mastery
+        if df.at[current_index, "Mastery"] > 0:
+            df.at[current_index, "Mastery"] -= 1
+
+    return df
 
 #------------------------------
 

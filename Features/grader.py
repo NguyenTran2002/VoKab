@@ -1,17 +1,25 @@
 # universal import
 from universal_imports import *
 
+# import features
+import helper
+
 #------------------------------
 
-def compare_2_strings(user_string, correct_string):
+def check_answer(user_answer, df, current_index):
     """
     DESCRIPTION
-        Check whether a user's string is the same as the correct string.
+        Return True if the answer is correct
+        Return the correct answer if the answer is false
     """
 
-    if user_string == correct_string:
-        return True
+    # get the correct answer
+    correct_answer = df.at[current_index, "Word"]
 
-    return False
+    # compare the two answers
+    if user_answer == correct_answer:
+        return True
+    else:
+        return correct_answer
     
 #------------------------------
