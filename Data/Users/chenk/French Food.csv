@@ -1,19 +1,20 @@
-le beurre,butter
-la bière,beer
-le café,coffee
-le chocolat,chocolate
-le cidre,cider
-la confiture,jam
-le fromage,cheese
-le pain,bread
-les pâtes,pasta
-le piment,chili pepper
-le riz,rice
-le sirop d'érable,maple syrup
-la spécialité locale,local specialty
-la tablette de chocolat,chocolate bar
-le thé,tea
-le thé a la menthe,mint tea
-le vin,wine
-le salé,savory food
-le sucré,sweet food
+Word,Definition,Mastery,Total Tries,Total Success
+le beurre,butter,0,0,0
+la bière,beer,0,0,0
+le café,coffee,0,0,0
+le chocolat,chocolate,0,0,0
+le cidre,cider,0,0,0
+la confiture,jam,0,0,0
+le fromage,cheese,0,0,0
+le pain,bread,0,0,0
+les pâtes,pasta,0,0,0
+le piment,chili pepper,0,0,0
+le riz,rice,0,0,0
+le sirop d'érable,maple syrup,0,0,0
+la spécialité locale,local specialty,0,0,0
+la tablette de chocolat,chocolate bar,0,0,0
+le thé,tea,0,0,0
+le thé a la menthe,mint tea,0,0,0
+le vin,wine,0,0,0
+le salé,savory food,0,0,0
+le sucré,sweet food,0,0,0
