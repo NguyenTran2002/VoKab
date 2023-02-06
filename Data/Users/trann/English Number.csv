@@ -1,4 +1,4 @@
 Word,Definition,Mastery,Total Tries,Total Success
-one,1,0,1,1
-two,2,0,3,2
-three,3,0,3,3
+one,1,1,2,2
+two,2,0,4,2
+three,3,1,5,4

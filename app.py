@@ -31,10 +31,13 @@ def homepage():
             3. reformat the sets if needed
     """
 
+    # global variable
+    global data_store
+
     #--------------------------
 
     # temporarily hardcode the user
-    user = "chenk"
+    user = "trann"
     data_store.user = user
 
     # gets all study sets under the user
@@ -87,6 +90,9 @@ def writing_practice_start():
             5. ask the first word, then redirect to the check result page
     """
 
+    # global variable
+    global data_store
+
     # get the requested study set
     chosen_set_name = flask.request.form.get('set')
     data_store.chosen_set_name = chosen_set_name
@@ -132,23 +138,11 @@ def writing_practice():
             3. redirect to the check result page
     """
 
-    # if the study set round is completed, update the data, and redirect to the completed page
+    # global variable
+    global data_store
+
+    # if the study set round is completed, redirect to the completed page
     if len(data_store.study_indicies) == 0:
-
-        # the final dataframe
-        final_df = data_store.to_export_df.copy()
-
-        # path
-        path = data_store.set_path
-
-        # DEBUGGING
-        print(path)
-        
-        # export the dataframe
-        final_df.to_csv(path, index = False)
-
-        # update the set_df object
-        data_store.set_df = final_df
 
         return flask.render_template("set_completed.html")
 
@@ -177,6 +171,9 @@ def writing_result():
             3. compare the two answers, and display whether the user is correct or not
     """
 
+    # global variable
+    global data_store
+
     # get the user's answer
     user_answer = flask.request.args.get('user_answer')
 
@@ -200,8 +197,11 @@ def writing_result():
 
         data_store.to_export_df = to_export_df
 
+        # update the data
+        data_store = helper.update_and_export_data(data_store)
+
         # render webpage
-        return flask.render_template("writing_result_correct.html")
+        return flask.render_template("writing_result_correct.html", word = user_answer)
 
     else:
 
@@ -212,6 +212,9 @@ def writing_result():
         to_export_df = helper.update_data_after_answer(False, to_export_df, current_index)
 
         data_store.to_export_df = to_export_df
+
+        # update the data
+        data_store = helper.update_and_export_data(data_store)
 
         # render webpage
         return flask.render_template("writing_result_wrong.html",\
@@ -227,6 +230,9 @@ def learning_progress():
     DESCRIPTION:
         Show the user the learning progress on a particular study set.
     """
+
+    # global variable
+    global data_store
 
     # get the requested study set
     chosen_set_name = flask.request.args.get('set')
@@ -277,6 +283,9 @@ def reset_progress():
     DESCRIPTION:
         Reset the mastery level of all words in the study set
     """
+
+    # global variable
+    global data_store
 
     # get the requested study set
     chosen_set_name = data_store.chosen_set_name\

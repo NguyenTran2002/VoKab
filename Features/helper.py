@@ -210,6 +210,28 @@ def reformat_set_df(in_df):
 
 #------------------------------
 
+def update_and_export_data(data_store_object):
+
+    # make a copy to avoid upstream changes
+    data_store = data_store_object
+
+    # update the data
+    final_df = data_store.to_export_df.copy()
+
+    # path
+    path = data_store.set_path
+    
+    # export the dataframe
+    final_df.to_csv(path, index = False)
+
+    # update the set_df object
+    data_store.set_df = final_df
+
+    # return the updated data store object
+    return data_store
+
+#------------------------------
+
 def single_account_transactions(in_main_df, account_name):
     """
     DESCRIPTION:
