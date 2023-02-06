@@ -6,35 +6,44 @@
 
         <title>VoKab</title>
 
+        <link rel="stylesheet" href = "static/home.css">
+
     </head>
 
     <style>
 
-        table {
-          border-collapse: collapse;
-          width: 100%;
-        }
-        
-        th, td {
-          text-align: left;
-          padding: 8px;
-        }
-        
-        tr:nth-child(even) {background-color: #d6e7ea;}
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {background-color: #d6e7ea;}
 
     </style>
 
     <body>
 
-        <!-- 
-            anchor tag that leads to home
-            <a href="{{ url_for('homepage') }}">Home</a> -->
+        <div class = "header">
+          <h1>VoKab</h1>
+          <p>Enabling What Quizlet Cannot</p>
+        </div>
+
+        <br>
 
         <form style = "display: inline" action = "/" method = "get">
             <button>VoKab Home</button>
         </form>
+        
+        <br>
 
         <br>
+
+        <h3>Select Study Set to Start Learning</h3>
 
         <form method = "POST" action = "/writing_practice_start">
             <select name = "set"> <!--this is the name of the variable to be passed onto other places-->
@@ -44,9 +53,23 @@
           {% endfor %}
             </select>
           <input type = "submit" value = "Start Learning">
-          </form>
+        </form>
 
         <br>
+
+        <br>
+
+        <h3>See Learning Progress</h3>
+
+        <form method = "GET" action = "/learning_progress">
+          <select name = "set"> <!--this is the name of the variable to be passed onto other places-->
+        <option value = "{{study_sets[0]}}" selected>{{study_sets[0]}}</option>
+        {% for set in study_sets[1:] %}
+          <option value = "{{set}}">{{set}}</option>
+        {% endfor %}
+          </select>
+        <input type = "submit" value = "View Progress">
+      </form>
 
 
     </body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+    <head>
+
+        <title>Learning Progress</title>
+
+        <link rel="stylesheet" href = "static/home.css">
+
+    </head>
+
+    <style>
+
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        th, td {
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {background-color: #d6e7ea;}
+
+    </style>
+
+    <body>
+
+        <form style = "display: inline" action = "/" method = "get">
+            <button>VoKab Home</button>
+        </form>
+        
+        <br>
+
+        <br>
+
+        <h1>{{study_set}} Overview</h1>
+
+        <br>
+        <br>
+
+        <h3>{{percent_mastered}}% mastered</h3>
+
+        <h4>Of the total {{num_set}} words:</h4>
+        <h4>You mastered {{num_mastered}} words.</h4>
+        <h4>You are learning {{num_learning}} words.</h4>
+        <h4>{{num_not_learned}} words are not yet learned.</h4>
+        <h5>A word is "mastered" when the mastery level is 3, "learning" when the mastery level is 1 or 2
+        and "not learned" when the mastery level is 0.</h5>
+        </h5>
+
+        <br> <br>
+
+        <form style = "display: inline" action = "/reset_progress" method = "get">
+            <button>Reset Mastery Progress</button>
+        </form>
+
+        <br>
+
+        <br>
+
+        <h2>Detailed Statistics</h2>
+
+        {% for row in study_set_html %}
+            {{ row|safe }}
+        {% endfor %}
+
+
+    </body>
+
+</html>

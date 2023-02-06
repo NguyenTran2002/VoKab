@@ -34,7 +34,7 @@ def homepage():
     #--------------------------
 
     # temporarily hardcode the user
-    user = "trann"
+    user = "chenk"
     data_store.user = user
 
     # gets all study sets under the user
@@ -100,8 +100,9 @@ def writing_practice_start():
     data_store.set_df = set_df
     data_store.to_export_df = set_df.copy()
 
-    # generate an integer list of the length of the study set
-    word_indices = list(range(len(set_df)))
+    # filter the set to only contains words with mastery level < 3 (not mastered)
+    not_mastered_df = set_df[set_df['Mastery'] < 3]
+    word_indices = list(not_mastered_df.index.values)
 
     # shuffle the word indices
     study_indicies = word_indices
@@ -216,6 +217,121 @@ def writing_result():
         return flask.render_template("writing_result_wrong.html",\
             user_answer = user_answer,\
             correct_answer = result) 
+
+#------------------------------
+
+@app.route("/learning_progress", methods = ['GET'])
+def learning_progress():
+
+    """
+    DESCRIPTION:
+        Show the user the learning progress on a particular study set.
+    """
+
+    # get the requested study set
+    chosen_set_name = flask.request.args.get('set')
+    data_store.chosen_set_name = chosen_set_name
+
+    # path to the set
+    path = "Data/Users/" + data_store.user + "/" + chosen_set_name + ".csv"
+    data_store.set_path = path
+
+    # read in the study set
+    set_df = pd.read_csv(path)
+    data_store.set_df = set_df
+
+    # sort by mastery level
+    set_df = set_df.sort_values(by = ['Mastery'], ascending = False)
+
+    # filter the set to only contains words with certain conditions
+    mastered_df = set_df[set_df['Mastery'] == 3]
+    learning_df = set_df[(set_df['Mastery'] == 1) | (set_df['Mastery'] == 2)]
+    not_learned_df = set_df[set_df['Mastery'] == 0]
+    
+    # get the metrics
+    num_mastered = len(mastered_df)
+    num_learning = len(learning_df)
+    num_not_learned = len(not_learned_df)
+    num_set = len(set_df)
+
+    # calculate the percentage of words mastered, rounded to the nearest integer
+    percent_mastered = round(num_mastered / num_set * 100)
+
+    #--------------------------
+
+    return flask.render_template("learning_progress.html",\
+        study_set = chosen_set_name,\
+        num_mastered = num_mastered,\
+        num_learning = num_learning,\
+        num_not_learned = num_not_learned,\
+        num_set = num_set,\
+        percent_mastered = percent_mastered,\
+        study_set_html = [set_df.to_html(classes = 'study_set', header = "true")])
+
+#------------------------------
+
+@app.route("/reset_progress", methods = ['GET'])
+def reset_progress():
+
+    """
+    DESCRIPTION:
+        Reset the mastery level of all words in the study set
+    """
+
+    # get the requested study set
+    chosen_set_name = data_store.chosen_set_name\
+
+    # path to the set
+    path = data_store.set_path
+
+    # read in the study set
+    set_df = pd.read_csv(path)
+    data_store.set_df = set_df
+
+    # reset the mastery level
+    set_df['Mastery'] = 0
+
+    # export the dataframe
+    set_df.to_csv(path, index = False)
+    data_store.set_df = set_df
+
+    # sort by mastery level
+    set_df = set_df.sort_values(by = ['Mastery'], ascending = False)
+
+    # filter the set to only contains words with certain conditions
+    mastered_df = set_df[set_df['Mastery'] == 3]
+    learning_df = set_df[(set_df['Mastery'] == 1) | (set_df['Mastery'] == 2)]
+    not_learned_df = set_df[set_df['Mastery'] == 0]
+    
+    # get the metrics
+    num_mastered = len(mastered_df)
+    num_learning = len(learning_df)
+    num_not_learned = len(not_learned_df)
+    num_set = len(set_df)
+
+    # calculate the percentage of words mastered, rounded to the nearest integer
+    percent_mastered = round(num_mastered / num_set * 100)
+
+    #--------------------------
+
+    return flask.render_template("reset_progress.html",\
+        study_set = chosen_set_name,\
+        num_mastered = num_mastered,\
+        num_learning = num_learning,\
+        num_not_learned = num_not_learned,\
+        num_set = num_set,\
+        percent_mastered = percent_mastered,\
+        study_set_html = [set_df.to_html(classes = 'study_set', header = "true")])
+
+#------------------------------
+@app.errorhandler(404)
+def page_not_found(e):
+    return flask.render_template("404_page.html")
+
+#------------------------------
+@app.errorhandler(500)
+def page_not_found(e):
+    return flask.render_template("500_page.html")
 
 #------------------------------
 if __name__ == '__main__':
