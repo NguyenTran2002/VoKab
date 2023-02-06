@@ -48,6 +48,8 @@ class data_store():
         Re-implement this to have a dictionary-like operation?
     """
 
+    login_status = False
+
     user = None
     chosen_set_name = None
     set_df = None

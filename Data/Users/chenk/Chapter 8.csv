@@ -2,12 +2,12 @@ Word,Definition,Mastery,Total Tries,Total Success
 le blé noir,buckwheat,0,0,0
 la farine,flour,0,0,0
 le féculent,starch or carbohydrate,0,0,0
-la galette,savory crepe,0,0,0
-la levure chimique,baking powder,0,0,0
+la galette,savory crepe,0,1,0
+la levure chimique,baking powder,0,1,0
 la pâte,dough,0,0,0
 le riz,rice,0,0,0
 la semoule,semolina,0,1,0
-le beurre,butter,0,0,0
+le beurre,butter,1,1,1
 le fromage,cheese,0,0,0
 le lait,milk,0,0,0
 le yaourt,yogurt,0,0,0
@@ -26,26 +26,26 @@ l'orange,orange,0,0,0
 la pomme,apple,0,0,0
 la salade,salad,0,0,0
 la tomate,tomato,0,0,0
-le basilic,basil,0,0,0
+le basilic,basil,1,1,1
 la cannelle,cinnamon,0,0,0
-le poivre,pepper,0,0,0
+le poivre,pepper,1,1,1
 le sel,salt,0,0,0
 la canne à sucre,sugar cane,0,0,0
-le chocolat,chocolate,0,0,0
+le chocolat,chocolate,1,1,1
 la crêpe,crepe,0,0,0
-les frites,fries,0,0,0
+les frites,fries,1,1,1
 le gâteau,cake,0,0,0
 le pancake,pancake,0,0,0
-la soupe,soup,0,0,0
+la soupe,soup,1,1,1
 le sucre,sugar,0,0,0
 le cocktail,cocktail,0,0,0
-l'eau,water,0,0,0
+l'eau,water,1,1,1
 l'eau gazeuse,sparkling water,0,0,0
 une boisson gazeuse or un soda, carbonated drink,0,0,0
-l'assiette,plate,0,0,0
-le bol,bowl,0,0,0
+l'assiette,plate,1,1,1
+le bol,bowl,1,1,1
 le couteau,knife,0,0,0
-la cuillère,spoon,0,0,0
+la cuillère,spoon,1,1,1
 la cuisine du monde,ethnic food,0,0,0
 la dégustation,tasting/sampling,0,0,0
 la fourchette,fork,0,0,0
@@ -53,8 +53,8 @@ le frigo,fridge,0,0,0
 le plat,dish,0,0,0
 le placard,closet or cupboard,0,0,0
 la poubelle,trash can,0,0,0
-la recette,recipe,0,0,0
-les restes,leftovers,0,0,0
+la recette,recipe,1,1,1
+les restes,leftovers,0,1,0
 les ustensiles,silverware,0,0,0
 l'ingrédient,ingredient,0,0,0
 le producteur or la productrice, grower or producer,0,0,0
@@ -67,8 +67,8 @@ le goûter,snack,0,0,0
 adorer,to adore,1,1,1
 apporter,to bring,0,0,0
 congeler,to freeze,0,0,0
-cuisiner,to cook,0,0,0
-cultiver,to grow,0,0,0
+cuisiner,to cook,1,1,1
+cultiver,to grow,0,1,0
 déposer,to drop off,0,0,0
 élaborer,to elaborate,0,0,0
 étonner,to surprise,0,0,0
@@ -76,7 +76,7 @@ essayer,to try,0,0,0
 former,to train,0,0,0
 gagner,to win,0,0,0
 gaspiller,to waste,0,0,0
-laisser,to let or to leave,0,0,0
+laisser,to let or to leave,1,2,1
 mixer,to blend,1,1,1
 proposer,to offer,0,0,0
 se servir,to help yourself,0,1,0
@@ -84,7 +84,7 @@ verser,to pour,0,0,0
 choisi or choisie, chosen or select,0,0,0
 congelé or congelée, frozen,0,0,0
 coupé or coupée, sliced,0,0,0
-difficile,difficult,0,0,0
+difficile,difficult,1,1,1
 écrasé or écrasée, crushed,0,1,0
 facile,easy,0,0,0
 frit or frite, fried,0,0,0
@@ -97,7 +97,7 @@ présenté or présentée, presented,0,0,0
 proposé or proposée, proposed or offered,0,0,0
 raté or ratée, failed,0,0,0
 réussi or réussie, successful,0,0,0
-salé or salée, salty,0,1,0
+salé or salée, salty,1,2,1
 sauté or sautée, sautéed,0,0,0
 sucré or sucrée, sweet or sugary,0,0,0
 tiède,lukewarm,0,0,0
@@ -110,9 +110,9 @@ les études,studies,0,0,0
 la formation,training,0,0,0
 le parcours de vie,course of life,0,0,0
 la réussite,success,0,1,0
-le stage,internship,0,0,0
+le stage,internship,1,1,1
 le/la stagiaire,intern,0,0,0
-le succès,success,0,0,0
+le succès,success,0,1,0
 afrique,africa,0,0,0
 amérique du sud,south america,0,0,0
 amérique du nord,north america,0,0,0
@@ -126,8 +126,8 @@ océanie,oceania,0,0,0
 une cuillère à café,a teaspoon,0,0,0
 un sachet de,a packet,0,0,0
 une bouteille de,a bottle of,0,0,0
-un verre de,a glass of,0,0,0
-un bol de,a bowl of,0,0,0
+un verre de,a glass of,1,1,1
+un bol de,a bowl of,1,1,1
 une cuillère à soupe,a tablespoon,0,0,0
 une boîte de,a can of or a box of,0,0,0
 une pincée de,a pinch of,0,0,0

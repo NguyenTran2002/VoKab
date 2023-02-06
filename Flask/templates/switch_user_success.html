@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+    <head>
+
+        <title>Log In Success</title>
+
+        <link rel="stylesheet" href = "static/home.css">
+
+    </head>
+
+    <style>
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {background-color: #d6e7ea;}
+
+    </style>
+
+    <body>
+
+        <div class = "header">
+          <h1>VoKab</h1>
+          <p>Enabling What Quizlet Cannot</p>
+        </div>
+
+        <br>
+
+        <form style = "display: inline" action = "/" method = "get">
+            <button>VoKab Home</button>
+        </form>
+
+        <br>
+        <br>
+
+        <h3>You Successfully Logged In As:</h3>
+        <h4>{{user}}<h4>
+
+        <h4>You can safely go Home and start learning!</h4>
+
+
+    </body>
+
+</html>

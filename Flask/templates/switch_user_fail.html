@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+    <head>
+
+        <title>Failed Log In</title>
+
+        <link rel="stylesheet" href = "static/home.css">
+
+    </head>
+
+    <style>
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {background-color: #d6e7ea;}
+
+    </style>
+
+    <body>
+
+        <div class = "header">
+          <h1>VoKab</h1>
+          <p>Enabling What Quizlet Cannot</p>
+        </div>
+
+        <br>
+
+        <form style = "display: inline" action = "/" method = "get">
+            <button>VoKab Home</button>
+        </form>
+
+        <br>
+        <br>
+
+        <h3>Credentials Invalid. Please check your user name AND password.</h3>
+        <br>
+
+        <form style = "display: inline" action = "/switch_user" method = "post">
+          <button>Retry</button>
+
+
+    </body>
+
+</html>

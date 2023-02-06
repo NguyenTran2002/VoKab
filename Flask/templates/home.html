@@ -38,9 +38,18 @@
         <form style = "display: inline" action = "/" method = "get">
             <button>VoKab Home</button>
         </form>
-        
+
+        <br>
         <br>
 
+        <h3>You're Logged In As:</h3>
+        <h4>{{user}}<h4>
+        <br>
+        <form style = "display: inline" action = "/switch_user" method = "post">
+          <button>Switch User</button>
+        </form>
+        
+        <br>
         <br>
 
         <h3>Select Study Set to Start Learning</h3>
@@ -74,7 +83,7 @@
       <br>
       <br>
 
-      <img src = "{{ url_for('static', filename = 'correct 2.gif') }}" />
+      <img src = {{image_address}} />
 
 
     </body>

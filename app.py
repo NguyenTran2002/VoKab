@@ -36,9 +36,15 @@ def homepage():
 
     #--------------------------
 
-    # temporarily hardcode the user
-    user = "chenk"
-    data_store.user = user
+    # use sample user if no user is specified
+    if data_store.login_status == False:
+        # hardcode the sample user
+        user = "sample_user_1"
+        data_store.user = user
+
+    else:
+        # get the user
+        user = data_store.user
 
     # gets all study sets under the user
     study_sets = helper.get_study_sets(user) # list of strings
@@ -75,7 +81,85 @@ def homepage():
         - Information on drop down menu: https://stackoverflow.com/questions/66627718/how-to-grab-the-value-from-the-drop-down-menu-using-flask
     """
 
-    return flask.render_template("home.html", study_sets = study_sets)
+    # random a number from 1 to 5(inclusive)
+    random_num = random.randint(1, 5)
+
+    # random image on home page
+    image_name = "home " + str(random_num) + ".gif"
+
+    home_image_address = flask.url_for('static', filename = image_name) 
+
+    return flask.render_template("home.html",\
+        user = user,\
+        study_sets = study_sets,\
+        image_address = home_image_address)
+
+#------------------------------
+
+@app.route("/switch_user", methods = ['POST'])
+def switch_user():
+    """
+    DESCRIPTION:
+        Change the user's to access different study sets
+    """
+
+    # global variable
+    global data_store
+
+    # get the current user
+    current_user = data_store.user
+
+    # render the page
+    return flask.render_template("switch_user.html", user = current_user)
+
+#------------------------------
+
+@app.route("/switch_user_result", methods = ['POST'])
+def switch_user_result():
+    """
+    DESCRIPTION:
+        Result of the log in effort
+    """
+
+    # global variable
+    global data_store
+
+    # request user name and password
+    user_name = flask.request.form.get('user_name')
+    password = flask.request.form.get('password')
+
+    # read in the logins data
+    logins_df = pd.read_csv("Data/Logins.csv")
+
+    # check if the user exists
+    if user_name in logins_df.User.values:
+
+        # get the user's password
+        user_password = logins_df[logins_df['User'] == user_name]['Password'].values[0]
+        
+        # DEBUGGING
+        print("Saved Password: ", user_password)
+
+        # check if the password is correct or if there is no password (sample user)
+        if (user_password == password) or (type(user_password) != str):
+
+            # update the data store
+            data_store.login_status = True
+            data_store.user = user_name
+
+            # render the page
+            return flask.render_template("switch_user_success.html",\
+                user = user_name)
+
+        else:
+
+            # render the page
+            return flask.render_template("switch_user_fail.html")
+
+    else:
+
+        # render the page
+        return flask.render_template("switch_user_fail.html")
 
 #------------------------------
 
@@ -203,8 +287,25 @@ def writing_result():
         # update the data
         data_store = helper.update_and_export_data(data_store)
 
+        #--------------------------
+
+        # random a number from 1 to 5 (inclusive)
+        random_num = random.randint(1, 5)
+
+        # random image on home page
+        image_name = "correct " + str(random_num) + ".gif"
+
+        # DEBUGGING
+        print("IMAGE NAME: " + image_name)
+
+        correct_image_address = flask.url_for('static', filename = image_name) 
+
+        #--------------------------
+
         # render webpage
-        return flask.render_template("writing_result_correct.html", word = user_answer)
+        return flask.render_template("writing_result_correct.html",\
+            word = user_answer,\
+            image_address = correct_image_address)
 
     else:
 
@@ -219,10 +320,23 @@ def writing_result():
         # update the data
         data_store = helper.update_and_export_data(data_store)
 
+        #--------------------------
+
+        # random a number from 1 to 5 (inclusive)
+        random_num = random.randint(1, 5)
+
+        # random image on home page
+        image_name = "wrong " + str(random_num) + ".gif"
+
+        wrong_image_address = flask.url_for('static', filename = image_name) 
+
+        #--------------------------
+
         # render webpage
         return flask.render_template("writing_result_wrong.html",\
             user_answer = user_answer,\
-            correct_answer = result) 
+            correct_answer = result,\
+            image_address = wrong_image_address)
 
 #------------------------------
 
@@ -349,12 +463,3 @@ def page_not_found(e):
 if __name__ == '__main__':
 
     app.run(port = 2700)
-
-    # import logging
-    # logging.basicConfig(filename='error.txt',level=logging.DEBUG)
-
-    """
-    TO IMPLEMENT
-    - output the graph to EVERY SINGLE FOLDER (not only the static folder)
-    - test which folder output the damn graph
-    """

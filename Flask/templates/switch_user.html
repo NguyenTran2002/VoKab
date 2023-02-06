@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+    <head>
+
+        <title>Switch User</title>
+
+        <link rel="stylesheet" href = "static/home.css">
+
+    </head>
+
+    <style>
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {background-color: #d6e7ea;}
+
+    </style>
+
+    <body>
+
+        <div class = "header">
+          <h1>VoKab</h1>
+          <p>Enabling What Quizlet Cannot</p>
+        </div>
+
+        <br>
+
+        <form style = "display: inline" action = "/" method = "get">
+            <button>VoKab Home</button>
+        </form>
+
+        <br>
+        <br>
+
+        <h3>You're Currently Logged In As:</h3>
+        <h4>{{user}}<h4>
+        <br>
+        
+        <form action = "/switch_user_result" method = "post">
+
+          <label for = "user_name">User Name:</label>
+          <input type = "text" name = "user_name">
+
+          <label for = "password">Password:</label>
+          <input type = "password" name = "password">
+          
+          <input type = "submit" value = "Log In">
+
+        </form>
+
+
+    </body>
+
+</html>

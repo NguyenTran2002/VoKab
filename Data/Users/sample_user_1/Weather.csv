@@ -1,0 +1,12 @@
+Word,Definition,Mastery,Total Tries,Total Success
+Cloudy, A weather condition where you cannot see the sun,0,1,0
+Sunny, A weather condition where you can see the sun,0,0,0
+Rainy, A weather condition where it is raining,0,0,0
+Snowy, A weather condition where it is snowing,0,1,0
+Windy, A weather condition where there is a lot of wind,0,1,0
+Foggy, A weather condition where there is a lot of fog,0,0,0
+Stormy, A weather condition where there is a storm,0,1,0
+Thunderstorm, A weather condition where there is a thunderstorm,0,1,0
+Hurricane, A weather condition where there is a hurricane,0,0,0
+Tornado, A weather condition where there is a tornado,1,1,1
+Flood, A weather condition where there is a flood,1,1,1
