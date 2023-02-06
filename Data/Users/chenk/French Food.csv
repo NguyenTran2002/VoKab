@@ -1,20 +1,20 @@
 Word,Definition,Mastery,Total Tries,Total Success
 le beurre,butter,0,0,0
-la bière,beer,0,0,0
+la bière,beer,1,1,1
 le café,coffee,0,0,0
 le chocolat,chocolate,0,0,0
-le cidre,cider,0,0,0
+le cidre,cider,0,1,0
 la confiture,jam,0,0,0
-le fromage,cheese,0,0,0
+le fromage,cheese,0,1,1
 le pain,bread,0,0,0
 les pâtes,pasta,0,0,0
 le piment,chili pepper,0,0,0
 le riz,rice,0,0,0
 le sirop d'érable,maple syrup,0,0,0
 la spécialité locale,local specialty,0,0,0
-la tablette de chocolat,chocolate bar,0,0,0
+la tablette de chocolat,chocolate bar,0,1,0
 le thé,tea,0,0,0
-le thé a la menthe,mint tea,0,0,0
+le thé a la menthe,mint tea,0,1,0
 le vin,wine,0,0,0
-le salé,savory food,0,0,0
+le salé,savory food,1,1,1
 le sucré,sweet food,0,0,0

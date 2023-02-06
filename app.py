@@ -37,7 +37,7 @@ def homepage():
     #--------------------------
 
     # temporarily hardcode the user
-    user = "trann"
+    user = "chenk"
     data_store.user = user
 
     # gets all study sets under the user
@@ -48,6 +48,9 @@ def homepage():
 
         # path to the study set
         path = "Data/Users/" + user + "/" + set_name + ".csv"
+
+        # DEBUGGING
+        print(path)
 
         # read in the study set
         read_in_df = pd.read_csv(path, header = None)

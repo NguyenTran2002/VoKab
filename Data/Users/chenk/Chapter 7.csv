@@ -1,0 +1,150 @@
+Word,Definition,Mastery,Total Tries,Total Success
+l'autoroute,freeway,0,0,0
+la basilique,basilica,0,0,0
+la cathédrale,cathedral,0,0,0
+le centre des affaires,business center,0,0,0
+l'église,church,0,0,0
+l'hôtel de ville,city hall,0,0,0
+le jardin botanique,botanical garden,0,0,0
+le marché,market,0,0,0
+le monument,monument,0,0,0
+la mosquée,mosque,0,0,0
+le musée,museum,0,0,0
+le musée d'art contemporain,modern art museum,0,0,0
+le parc,park,0,0,0
+le place,square or plaza,0,0,0
+le quartier,neighborhood,0,0,0
+la rue,street,0,0,0
+la rue piétonne,pedestrian street,0,0,0
+le stade,stadium,0,1,0
+à carreaux,plaid,0,0,0
+à fleurs,floral,0,0,0
+à rayures,striped,0,0,0
+en caoutchouc,made of rubber,0,0,0
+en coton,made of cotton,0,0,0
+en cuir,made of leather,0,0,0
+en laine,made of wool,0,0,0
+en tissu,made of fabric,0,0,0
+en toile,made of canvas,0,0,0
+(aller) tout droit,to go straight ahead,0,0,0
+longer,to walk (or drive) along,0,0,0
+traverser,to cross,0,0,0
+tourner/prendre à gauche,turn left,0,0,0
+tourner/prendre à droite,turn right,0,0,0
+l'avion,plane,0,0,0
+le bateau,boat,0,0,0
+le bus,bus,0,0,0
+le bus touristique,tour bus,0,0,0
+le gyropode,segway,0,0,0
+le métro,subway,0,0,0
+la moto,motorcycle,0,0,0
+le train,train,0,0,0
+le tram, tram or streetcar,1,1,1
+la trotinette,scooter,0,0,0
+la voiture,car,0,0,0
+le vélo,bicycle,0,0,0
+la tenue,outfit,0,0,0
+le pull,sweater,1,1,1
+l'accessoire,accessory,0,0,0
+la ceinture,belt,0,0,0
+le tee-shirt,t-shirt,0,0,0
+les chaussettes,socks,0,0,0
+les baskets,sneakers,0,0,0
+les chaussures,shoes,0,0,0
+le jean,jeans,0,0,0
+la jupe,skirt,0,0,0
+la robe,dress,0,0,0
+la chemise,shirt,0,0,0
+un restaurant,restaurant,0,0,0
+une boulangerie,bakery,0,0,0
+un bar,bar,0,0,0
+une station-service,gas station,0,0,0
+un hôpital,hospital,0,0,0
+une compagnie de taxi,taxi service,0,0,0
+une banque,bank,0,0,0
+une boucherie,butcher shop,0,0,0
+une épicerie,small grocery store,0,0,0
+un magasin de vêtements,clothes store,0,0,0
+un magasin de chaussures,shoe shop,0,0,0
+un fleuriste,florist,0,0,0
+la grande surface,department store or warehouse store,0,0,0
+le supermarché,supermarket,1,1,1
+le commerce de proximité,local shop,0,0,0
+le commerçant or la commerçante,shop owner,0,0,0
+accompagner,to accompany,0,0,0
+calculer,to calculate,0,0,0
+commander,to order,0,0,0
+conseiller,to advise,0,0,0
+consommer,to consume,0,0,0
+créer,to create,0,0,0
+distribuer,to distribute,0,0,0
+envoyer,to send,0,0,0
+fonctionner,to function,0,0,0
+introduire,to introduce,0,0,0
+inventer,to invent,0,0,0
+parcourir,to run through,0,0,0
+permettre,to allow,0,0,0
+porter,to wear,0,0,0
+produire,to produce,0,0,0
+récupérer,to pick up,0,0,0
+recommander,to recommend,0,0,0
+se déplacer,to get around,0,0,0
+s'habiller,to get dressed,0,0,0
+soutenir,to support,0,0,0
+se rassembler,to gather,0,0,0
+d'abord,first,0,0,0
+après,after,0,0,0
+ensuite,then,0,0,0
+puis,then,0,0,0
+enfin,finally,0,0,0
+administratif or administrative, administrative,0,0,0
+agréable,pleasant,0,0,0
+ancien or ancienne, ancient,0,0,0
+artisanal or artisanale, hand-crafted,0,0,0
+biologique,organic,0,0,0
+calme,calm,0,0,0
+célèbre,famous,0,0,0
+central or centrale,central,0,0,0
+classique,classic,0,0,0
+coloré or colorée,colorful,0,0,0
+confortable,comfortable,0,0,0
+culturel or culturelle,cultural,1,1,1
+démodée,out of style or outdate,0,0,0
+écologique, eco-friendly,0,0,0
+économique or economical, affordable,0,0,0
+frais or fraîche,fresh,0,0,0
+industriel or industrielle,industrial,0,0,0
+mondial or mondiale,worldwide,0,0,0
+national or nationale,national,0,0,0
+naturel or naturelle,natural,0,0,0
+nombreux or nombreuse,numerous,0,0,0
+parfait or parfaite,perfect,0,0,0
+possible,possible,0,0,0
+pratique or practical, convenient,0,0,0
+protégé or protégée,protected,0,0,0
+rapide,fast,0,0,0
+recyclé or recyclée,recycled,0,0,0
+riche,rich,0,0,0
+simple,simple,0,0,0
+suivant or suivante,following,0,0,0
+unisexe,unisex,0,0,0
+urbain or urbaine,urban,0,0,0
+valable,valid,0,0,0
+vieux or vieille,old,0,0,0
+à la mode,fashionable,0,0,0
+a sa taille,the correct size,0,0,0
+autrement,in a different way,0,0,0
+ça fait 1 euro,it's going to be 1 euro,0,0,0
+ce sera tout?,will that be all?,0,0,0
+de plus en plus,more and more,0,0,0
+de votre choix,of your choice,0,0,0
+donner rendez-vous,to set an appointment,0,0,0
+facile à porter,easy to wear,0,0,0
+faire attention,to pay attention or to watch for,0,0,0
+faire des achats,to buy things,0,0,0
+justement,fairly,0,1,0
+le moins souvent,least often,0,0,0
+le plus souvent,most often,0,0,0
+le seul or la seule,the only one,0,0,0
+rester à la maison,to stay home,0,0,0
+retirer une commande,to pick up an order,0,0,0
