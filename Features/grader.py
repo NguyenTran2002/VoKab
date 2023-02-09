@@ -16,8 +16,14 @@ def check_answer(user_answer, df, current_index):
     # get the correct answer
     correct_answer = df.at[current_index, "Word"]
 
+    # get lower case of user_answer
+    user_answer_lower = user_answer.lower()
+
+    # get lower case of correct_answer
+    correct_answer_lower = correct_answer.lower()
+
     # compare the two answers
-    if user_answer == correct_answer:
+    if user_answer_lower == correct_answer_lower:
         return True
     else:
         return correct_answer

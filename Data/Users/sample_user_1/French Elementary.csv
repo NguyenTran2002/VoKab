@@ -1,15 +1,15 @@
 Word,Definition,Mastery,Total Tries,Total Success
 l'école, school,0,0,0
-la cathedrale, cathedral,0,0,0
+la cathedrale, cathedral,0,1,0
 le chateau, castle,0,0,0
 le cinema, cinema,0,0,0
 le club, club,0,0,0
 le concert, concert,0,0,0
-le couvent, convent,0,0,0
+le couvent, convent,0,1,0
 le cimetiere, cemetery,0,0,0
-le cours, course,0,0,0
+le cours, course,0,2,0
 le dejeuner, lunch,0,0,0
 le dictionnaire, dictionary,0,0,0
-le drapeau, flag,0,0,0
-le dromadaire, dromedary,0,0,0
-le drapeau, flag,0,0,0
+le drapeau, flag,0,1,0
+le dromadaire, dromedary,0,1,0
+le drapeau, flag,0,1,0

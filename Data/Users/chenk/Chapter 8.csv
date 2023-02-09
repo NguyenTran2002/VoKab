@@ -9,7 +9,7 @@ le riz,rice,0,0,0
 la semoule,semolina,0,1,0
 le beurre,butter,1,1,1
 le fromage,cheese,0,0,0
-le lait,milk,0,0,0
+le lait,milk,0,1,0
 le yaourt,yogurt,0,0,0
 l'œuf,egg,0,0,0
 le poulet,chicken,0,1,0
