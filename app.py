@@ -10,6 +10,7 @@ from universal_imports import *
 # import all needed features
 import helper
 import grader
+import quizzer
 
 #------------------------------
 
@@ -193,13 +194,8 @@ def writing_practice_start():
     data_store.set_df = set_df
     data_store.to_export_df = set_df.copy()
 
-    # filter the set to only contains words with mastery level < 3 (not mastered)
-    not_mastered_df = set_df[set_df['Mastery'] < 3]
-    word_indices = list(not_mastered_df.index.values)
-
-    # shuffle the word indices
-    study_indicies = word_indices
-    random.shuffle(study_indicies)
+    # get the study order
+    study_indicies = quizzer.get_study_order(set_df)
     data_store.study_indicies = study_indicies
 
     # get the first word
