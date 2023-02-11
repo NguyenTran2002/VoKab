@@ -11,8 +11,9 @@ def get_study_order(in_df):
     DESCRIPTION
         Given a study set, return a study order with the following characteristics:
             1. Contains no mastered word (mastery = 3)
-            2. Words with the highest mastery are placed first
+            2. Words with the highest mastery are placed LAST
             3. Words with the same mastery are placed randomly
+        Highest mastery level words are placed LAST so that they will be returned FIRST when the main app uses pop()
     """
 
     # make a copy of the dataframe
@@ -34,7 +35,7 @@ def get_study_order(in_df):
     random.shuffle(indices_0)
 
     # concatenate the indices into the final study order
-    study_indices = indices_2 + indices_1 + indices_0
+    study_indices = indices_0 + indices_1 + indices_2
 
     # return the study order
     return study_indices
