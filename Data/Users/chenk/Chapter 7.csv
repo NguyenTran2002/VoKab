@@ -39,7 +39,7 @@ le gyropode,segway,0,0,0
 le métro,subway,0,0,0
 la moto,motorcycle,0,0,0
 le train,train,0,0,0
-le tram, tram or streetcar,1,1,1
+le tram, tram or streetcar,2,2,2
 la trotinette,scooter,0,0,0
 la voiture,car,0,0,0
 le vélo,bicycle,0,0,0
