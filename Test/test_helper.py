@@ -15,37 +15,29 @@ from pandas.testing import assert_frame_equal
 
 #------------------------------
 
-class test_reformat_main_df(unittest.TestCase):
+class test_get_study_sets(unittest.TestCase):
       
     def setUp(self):
         
-        # read in mint.csv data
-        self.input_df = pd.read_csv('Data/Test Data/reformat_main_df/mint_test.csv')
+        # test user
+        self.user = "sample_user_1"
 
-        # read in the expected output
-        self.expected_df = pd.read_csv('Data/Test Data/reformat_main_df/mint_processed_test.csv')
+        # the expected sets to be returned from test user
+        self.expected_sets = ["Food", "French Elementary", "Simple English", "Weather"]
 
-        # convert the date column to datetime
-        self.expected_df["Date"] = pd.to_datetime(self.expected_df["Date"])
+        # sort the list in the default order of sort() function
+        self.expected_sets.sort()
 
-        # export the expected output to csv
-        self.expected_df.to_csv("Data/Test Data/reformat_main_df/mint_processed_test.csv", index=False)
+    def test_get_study_sets(self):
 
-        # re_read in the expected output
-        self.expected_df = pd.read_csv('Data/Test Data/reformat_main_df/mint_processed_test.csv')
+        # get the output from the function we're testing
+        found_sets = helper.get_study_sets(self.user)
 
-    def test_reformat_main_df(self):
-
-        result = helper.reformat_main_df(self.input_df)
-
-        # export result to csv
-        result.to_csv("Data/Test Data/reformat_main_df/result_test.csv", index=False)
-
-        # read in the result
-        result_re = pd.read_csv("Data/Test Data/reformat_main_df/result_test.csv")
+        # sort the list in the default order of sort() function
+        found_sets.sort()
 
         # check if the produced dataframe and the processed dataframe are the same
-        assert_frame_equal(result_re, self.expected_df, check_dtype=False)
+        self.assertEqual(found_sets, self.expected_sets)
 
 #------------------------------
 
