@@ -112,43 +112,18 @@ def get_study_sets(user):
 
 #------------------------------
 
-def check_person(tag):
-    """
-    DESCRIPTION:
-        This function is solely for the use of the main developer of this program.
-    
-    INPUT SIGNATURE:
-        1. tag (string): a tag from the original dataframe
-
-    OUTPUT SIGNATURE:
-        2. name (string): the name of the person said tag is referring to
-    """
-
-    person_tags = ['duy_nguyen', 'nhim',\
-       'minh_tran', 'zhihan',\
-       'antonio', 'huong_trinh', 'ori', 'grandparents',\
-       'john_win', 'Friends', 'rachel_blossom', 'professional_relationships']
-
-    if tag in person_tags:
-
-        # replace _ with space
-        name = tag.replace("_", " ")
-
-        # capitalize the first letter of each word
-        name = name.title()
-
-        return name
-
-    else:
-        return False
-
-#------------------------------
-
-def update_data_after_answer(result, df, current_index):
-
+def update_data_after_answer(assessment, df, current_index):
     """
     DESCRIPTION:
         Update the data to keep track of the user's progress on the study set
+
+    INPUT SIGNATURE:
+        1. assessment (boolean): whether the user got the answer correct or not
+        2. df (Pandas dataframe): the study set dataframe
+        3. current_index (int): the index of the current word that is being tested
+
+    OUTPUT SIGNATURE:
+        1. df (Pandas dataframe): the updated study set dataframe
     """
 
     # update Total Tries
@@ -213,6 +188,11 @@ def reformat_set_df(in_df):
 #------------------------------
 
 def update_and_export_data(data_store_object):
+    """
+    DESCRIPTION:
+        - Get the latest learning progress from the data store object
+        - Export and overwrite to the hard drive
+    """
 
     # make a copy to avoid upstream changes
     data_store = data_store_object

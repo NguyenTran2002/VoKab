@@ -267,16 +267,16 @@ def writing_result():
     # print(helper.data_store.set_df.at[helper.data_store.current_index, "Word"])
 
     # get the correct answer
-    result = grader.check_answer(user_answer, set_df, current_index)
+    assessment = grader.check_answer(user_answer, set_df, current_index)
 
     # if the answer is correct
-    if result == True:
+    if assessment == True:
 
         # to export df
         to_export_df = data_store.to_export_df
 
         # update the data of the result
-        to_export_df = helper.update_data_after_answer(result, to_export_df, current_index)
+        to_export_df = helper.update_data_after_answer(assessment, to_export_df, current_index)
 
         data_store.to_export_df = to_export_df
 
